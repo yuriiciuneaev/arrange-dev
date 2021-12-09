@@ -20,7 +20,7 @@ export default function Login() {
     const [password, setPassword] = useState('');
 
     const webAuth = new WebAuth({
-        domain:         process.env.NEXT_PUBLIC_AUTH0_DOMAIN,
+        domain:         process.env.NEXT_PUBLIC_AUTO0_CUSTOM_DOMAIN,
         clientID:       process.env.NEXT_PUBLIC_AUTH0_CLIENT_ID
     });
 
