@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router';
+import Link from 'next/link'
 import { WebAuth } from 'auth0-js';
 
 
@@ -67,12 +68,12 @@ export default function Login() {
         <Layout>
             <Container>
                 <TitleContainer>
-                    <a href="/">
+                    <Link href="/">
                         <LogoImage
                             src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
                             alt="Workflow"
                         />
-                    </a>
+                    </Link>
                     <Title>Sign in to your account</Title>
                     <TrialLinkWrapper>
                         Or{' '}
@@ -210,7 +211,7 @@ const TitleContainer = tw.div`
 `
 
 const LogoImage = tw.img`
-    mx-auto h-12 w-auto
+    mx-auto h-12 w-auto cursor-pointer
 `
 
 const Title = tw.h2`

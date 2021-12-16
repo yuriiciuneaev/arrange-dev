@@ -24,6 +24,7 @@
 */
 import { Fragment, useState } from 'react'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import { Dialog, Popover, RadioGroup, Tab, Transition } from '@headlessui/react'
 import { MenuIcon, SearchIcon, ShoppingCartIcon, UserIcon, XIcon } from '@heroicons/react/outline'
 import { StarIcon } from '@heroicons/react/solid'
@@ -230,7 +231,7 @@ function classNames(...classes) {
 }
 
 export default function Booking() {
-    const router = useRouter()
+  const router = useRouter()
 
   const [open, setOpen] = useState(false)
   const [selectedColor, setSelectedColor] = useState(product.colors[0])

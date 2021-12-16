@@ -35,8 +35,8 @@ const products = [
 ]
 
 export default function Checkout() {
-    const router = useRouter()
-    
+  const router = useRouter()
+
   return (
     <div className="bg-white">
       {/* Background color split screen for large screens */}
