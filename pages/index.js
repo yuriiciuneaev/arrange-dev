@@ -6,7 +6,7 @@ export default function Home() {
   const router = useRouter()
 
   useEffect(() => {
-      router.push('/bookings')
+      router.push('/courses')
   })
 
   return <p>Loading...</p>
