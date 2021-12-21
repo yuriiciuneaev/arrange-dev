@@ -20,6 +20,9 @@ module.exports = {
       },
       fontSize: {
         'tiny': '9px',
+      },
+      maxWidth: {
+        '33': '33rem'
       }
     },
   },

@@ -1,8 +1,6 @@
-import { Fragment } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
-import { Popover, Transition } from '@headlessui/react'
-import { ChevronUpIcon, ArrowLeftIcon } from '@heroicons/react/solid'
+import { ArrowLeftIcon } from '@heroicons/react/solid'
 
 const course = 
   {
@@ -12,7 +10,7 @@ const course =
     price: '2.395 kr',
     tax_price: '598.75 kr',
     duration: '10. januar - 31. januar',
-    imageSrc: '/courses/01_01.png',
+    imageSrc: '/images/01_01.png',
     imageAlt: '',
   }
 
@@ -25,7 +23,7 @@ export default function Checkout() {
       <div className="hidden lg:block fixed top-0 left-0 w-1/2 h-full bg-white" aria-hidden="true" />
       <div className="hidden lg:block fixed top-0 right-0 w-1/2 h-full bg-gray-50" aria-hidden="true" />
 
-      <div className="relative grid grid-cols-1 gap-x-16 max-w-7xl mx-auto lg:px-8 lg:grid-cols-2 xl:gap-x-40">
+      <div className="relative grid grid-cols-1 gap-x-16 max-w-7xl mx-auto lg:px-8 lg:pt-14 lg:grid-cols-2 xl:gap-x-40">
         <h1 className="sr-only">Order information</h1>
         <section
           aria-labelledby="summary-heading"
@@ -34,7 +32,7 @@ export default function Checkout() {
           <div className="max-w-lg mx-auto lg:max-w-none">
             <h4 id="summary-heading" className="text-sm font-medium text-gray-900 flex flex-row items-center lg:pt-14">              
               <Image
-                src="/courses/logo_course_01.png"
+                src="/images/logo_course_01.png"
                 width={28}
                 height={28}
                 className=""
@@ -65,15 +63,15 @@ export default function Checkout() {
         </section>
 
         <form className="pt-16 pb-16 px-4 sm:px-6 lg:px-0 lg:row-start-1 lg:col-start-1">
-          <div className="max-w-md mx-auto">            
-            <h2 id="contact-info-heading" className="flex items-center text-sm font-semibold text-gray-900 pb-10">
+          <div className="max-w-md mx-auto">
+            <a href="#" className="flex items-center text-sm font-semibold text-gray-900 pb-10">
               <ArrowLeftIcon
                 className='text-black h-4 w-4 mt-0'
                 aria-hidden="true"
               />
               <span className="pl-2">Back</span>
-            </h2>
-
+            </a>
+            
             <section>
               <button
                 type="button"
@@ -180,7 +178,7 @@ export default function Checkout() {
                         placeholder="1234 1234 1234 1234"
                       />
                       <img 
-                        src="/courses/major-credit-card-icons.png"
+                        src="/images/major-credit-card-icons.png"
                         className="absolute top-2 right-2 "
                       />
                     </div>
@@ -205,11 +203,11 @@ export default function Checkout() {
                           type="text"
                           name="card-cvc"
                           id="card-cvc"
-                          className="focus:ring-indigo-500 focus:border-indigo-500 relative block w-full rounded-none rounded-br-md bg-transparent focus:z-10 sm:text-sm border-gray-300"
+                          className="pr-10 focus:ring-indigo-500 focus:border-indigo-500 relative block w-full rounded-none rounded-br-md bg-transparent focus:z-10 sm:text-sm border-gray-300"
                           placeholder="CVC"
                         />
                         <img 
-                          src="/courses/credit-card.png"
+                          src="/images/credit-card.png"
                           className="absolute top-2 right-2 "
                         />
                       </div>

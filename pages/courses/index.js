@@ -83,7 +83,7 @@ const product = {
   ],
   images: [
     {
-      src: '/courses/01_01.png',
+      src: '/images/01_01.png',
       alt: 'Two each of gray, white, and black shirts laying flat.',
     }
   ],
@@ -501,7 +501,7 @@ export default function Booking() {
             
             <div className="ml-auto">
               <Image
-                src="/courses/logo_course_01.png"
+                src="/images/logo_course_01.png"
                 width={50}
                 height={50}
                 className=""
