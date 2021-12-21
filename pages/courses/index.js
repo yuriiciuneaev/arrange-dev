@@ -661,7 +661,7 @@ export default function Booking() {
                 <button
                   // type="submit"
                   type="button"
-                  className="mt-3.5 w-full bg-black border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-opacity-80 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  className="mt-3.5 w-full bg-black border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                   onClick={() => router.push('/checkout')}
                 >
                   Book a spot
@@ -683,10 +683,6 @@ export default function Booking() {
               </div>
             </div>
           </div>
-
-
-
-
 
           <div className="lg:col-span-2 lg:pr-8">
             <div className="flex flex-col font-inter pt-10 pb-8">
@@ -736,9 +732,6 @@ export default function Booking() {
           </div>
         </div>
 
-
-
-
         <div className="max-w-2xl mx-auto pt-24 px-4 sm:px-6 lg:max-w-7xl lg:px-8 ">
           <section aria-labelledby="reviews-heading" className="border-t border-b border-gray-200 py-10 ">
             <div className="flex items-center ml-auto font-inter text-md font-semibold text-black mt-5 mb-8 lg:mt-0">
@@ -784,7 +777,6 @@ export default function Booking() {
             </div>
           </section>
         </div>
-
         
         <div className="max-w-2xl mx-auto py-10 px-4 sm:px-6 lg:max-w-7xl lg:px-8  ">
           <div className="">
@@ -829,10 +821,8 @@ export default function Booking() {
               <p className="my-2 text-gray-500">Hvis myndighedernes retningslinjer gør fysisk fremmøde utilrådeligt, så gennemføres undervisningen online på det planlagte tidspunkt. Der gives ikke refusion, hvis undervisning gennemføres online.</p>
               <a href="#" className="underline font-bold text-sm">See more</a>
             </div>
-
           </div>
-        </div>
-        
+        </div>        
       </main>
 
       <footer aria-labelledby="footer-heading" className="bg-white border-t border-gray-200">
