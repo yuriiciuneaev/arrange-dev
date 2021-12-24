@@ -2,6 +2,13 @@ import Image from 'next/image'
 import { ArrowLeftIcon } from '@heroicons/react/solid'
 import { DeviceMobileIcon, CalendarIcon, MailIcon } from '@heroicons/react/outline'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import { Children } from 'react'
+
+interface CustomerDetails {
+  type: string;
+  name: string;
+  value?: string | string[];
+};
 
 const course = {
     id: 1,
@@ -14,7 +21,7 @@ const course = {
     imageAlt: '',
 }
 
-const customer_details = [
+const customer_details: Array<CustomerDetails> = [
   {
     type: "contact",
     name: "Email",
@@ -58,7 +65,7 @@ export default function Thankyou() {
       defaultZoom={8}
       defaultCenter={{ lat: -34.397, lng: 150.644 }}
     >
-      {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
+      <Marker position={{ lat: -34.397, lng: 150.644 }} />
     </GoogleMap>
   ))
 
@@ -135,7 +142,6 @@ export default function Thankyou() {
                 <div className="mt-1 bg-white rounded-md shadow-md -space-y-px overflow-hidden border-[#b0b0b0] border">
                   <div>
                     <MyMapComponent
-                      isMarkerShown
                       googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
                       loadingElement={<div style={{ height: `100%` }} />}
                       containerElement={<div style={{ height: `220px` }} />}
@@ -232,9 +238,13 @@ export default function Thankyou() {
                         <div>
                           <dt className="mt-4 mb-1 font-semibold black">{detail.name}</dt>
                           <dd className="text-black">
-                            {detail.value.map((address) => (
-                              <div>{address}</div>
-                            ))}  
+                            {
+                              Children.map(detail.value, (address) => {
+                                return (
+                                  <div>{address}</div>
+                                )                                
+                              })
+                            }
                           </dd>
                         </div>
                       ))}

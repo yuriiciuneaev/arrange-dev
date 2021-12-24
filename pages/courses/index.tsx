@@ -112,6 +112,7 @@ const people = [
 
 const meetings = [
   {
+    id: 1,
     meeting_day: '10. Jan, 2022',
     time: '12:00 - 14:00',
     teacher: 'Anja Bay',
@@ -119,6 +120,7 @@ const meetings = [
     description: 'Laboro er blevet kaldt naturens svar på anæstesi til både ordinære, storm- & koblede veer. Kombinationsafspænding leder op til dine tre fikspunkter, der flytter både din smertetærskel & udholdenhed markant...',
   },
   {
+    id: 2,
     meeting_day: '17. Jan, 2022',
     time: '12:00 - 14:00',
     teacher: 'Anja Bay',
@@ -127,6 +129,7 @@ const meetings = [
     Bækkenet er ikke en statisk størrelse, og det samme gør sig gældende for bækkenbunden. Jo mere du ved og har øvet at slippe muskulært samt mentaltrænet til pressefasen, desto mere vinder du troen på...`,
   },
   {
+    id: 3,
     meeting_day: '24. Jan, 2022',
     time: '12:00 - 14:00',
     teacher: 'Anja Bay',
@@ -134,6 +137,7 @@ const meetings = [
     description: 'På modul 3 kommer I sammen, alle andre moduler er kun for dig, der skal føde. Og nu bliver det interessant. For der kommer et punkt i fødslen, hvor h*n skal tage over og være klædt på til at finde fødelingoet frem - cirka halvvejs. Derfor skal h*n (eller de) med. Alle øvrige hjælpere er også velkomne!...',
   },
   {
+    id: 4,
     meeting_day: '31. Jan, 2022',
     time: '12:00 - 14:00',
     teacher: 'Anja Bay',
@@ -224,7 +228,7 @@ export default function Course() {
       defaultZoom={8}
       defaultCenter={{ lat: -34.397, lng: 150.644 }}
     >
-      {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
+      <Marker position={{ lat: -34.397, lng: 150.644 }} />
     </GoogleMap>
   ))
 
@@ -265,7 +269,6 @@ export default function Course() {
             </div>
             <div className="lg:rounded-r-md lg:rounded-l-none rounded-md overflow-hidden lg:ml-0.5 mb-1">
               <MyMapComponent
-                isMarkerShown
                 googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
                 loadingElement={<div style={{ height: `100%` }} />}
                 containerElement={<div style={{ height: `436px` }} />}
