@@ -8,7 +8,8 @@ import { StarIcon, ArrowLeftIcon, CheckIcon, ChevronDownIcon, ChatAltIcon, TagIc
 
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
 
-import Layout from '../../components/frontend/layout'
+import Layout from '../../components/frontend/Layout';
+// import ActivityTitleSection from '../../components/frontend/activities/activity'
 
 const product = {
   name: 'The Basic Course in Copenhagen at Smertefri Fødsel™',
@@ -50,6 +51,7 @@ const product = {
   details:
     'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
 }
+
 const reviews = {
   href: '#',
   average: '4,89',
@@ -93,18 +95,6 @@ const reviews = {
     },
   ],
 }
-const products = [
-  {
-    id: 1,
-    name: 'Basic Tee',
-    href: '#',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg',
-    imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
-    color: 'Black',
-  },
-  // More products...
-]
 
 const people = [
   { id: 1, name: 'Start: 10. januar  -  End: 31. januar', online: true },
@@ -219,7 +209,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Course() {
+export default function Activity() {
   const router = useRouter()
   const [selected, setSelected] = useState(people[0])
 

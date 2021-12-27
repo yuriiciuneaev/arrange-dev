@@ -6,14 +6,9 @@ import { WebAuth } from 'auth0-js';
 
 import tw from "tailwind-styled-components"
 
-import Layout from '../components/account/layout'
+import Layout from '../components/account/Layout'
 
 export default function Login() {
-    // const router = useRouter();
-    useEffect(() => {
-        console.log(" --- start");
-    })
-    
     const [loginError, setLoginError] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
