@@ -1,9 +1,6 @@
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router';
+import { useState } from 'react'
 import Link from 'next/link'
 import { WebAuth } from 'auth0-js';
-
-
 import tw from "tailwind-styled-components"
 
 import Layout from '../components/account/Layout'
