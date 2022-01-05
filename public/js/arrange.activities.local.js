@@ -1,6 +1,6 @@
 let xhttp = new XMLHttpRequest();
 
-let url_local = new URL("https://0485-96-44-161-9.ngrok.io/api/featured_activities");
+let url_local = new URL("https://09ff-96-44-161-9.ngrok.io/api/featured_activities");
 xhttp.open("GET", url_local.toString(), true); 
 
 xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
