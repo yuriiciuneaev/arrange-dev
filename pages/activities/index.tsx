@@ -1,7 +1,7 @@
 import tw from "tailwind-styled-components"
 
 import Layout         from '../../components/frontend/Layout';
-import TopTitle       from '../../components/frontend/sections/activities/TopTitle'
+import PageHeader       from '../../components/frontend/sections/activities/PageHeader'
 import ActivityImage  from '../../components/frontend/sections/activities/ActivityImage'
 import ActivityInfo   from '../../components/frontend/sections/activities/ActivityInfo'
 import Reviews        from '../../components/frontend/sections/activities/Reviews'
@@ -33,7 +33,7 @@ const activity = {
         `,
         author: 'Mark Edwards',
         avatarSrc:
-          '/avatars/photo-1519244703995-f4e0f30006d5.jpg',
+          '/images/avatars/photo-1519244703995-f4e0f30006d5.jpg',
         date: 'nov 2021',
       },
       {
@@ -45,7 +45,7 @@ const activity = {
         `,
         author: 'Blake Reid',
         avatarSrc:
-          '/avatars/photo-1519244703995-f4e0f30006d5.jpg',
+          '/images/avatars/photo-1519244703995-f4e0f30006d5.jpg',
         date: 'nov 2021',
       },
       {
@@ -57,7 +57,7 @@ const activity = {
         `,
         author: 'Ben Russel',
         avatarSrc:
-          '/avatars/photo-1519244703995-f4e0f30006d5.jpg',
+          '/images/avatars/photo-1519244703995-f4e0f30006d5.jpg',
         date: 'nov 2021',
       },
     ],
@@ -172,7 +172,7 @@ export default function Activity() {
   return (
     <Layout>
       <Container>
-        <TopTitle />
+        <PageHeader />
         <ActivityImage images={activity.images} />
         <ActivityInfo activity={activity}/>
         <Reviews reviews={activity.reviews}/>

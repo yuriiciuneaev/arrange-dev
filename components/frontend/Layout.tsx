@@ -5,7 +5,7 @@ function Layout({ children }) {
   return (
     <>
       <div className="bg-white">
-        <Header />
+        {/* <Header /> */}
         <main>{children}</main>
         <Footer />
       </div>

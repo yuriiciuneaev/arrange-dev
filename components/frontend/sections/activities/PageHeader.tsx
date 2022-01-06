@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { StarIcon, ArrowLeftIcon } from '@heroicons/react/solid'
 import tw from "tailwind-styled-components"
 
-function TopTitle() {
+function PageHeader() {
   return (
     <Wrapper>
       <Link href="#" passHref>
@@ -11,7 +11,7 @@ function TopTitle() {
           <ALeftIcon
             aria-hidden="true"
           />
-          <span>Course in Copenhagen</span>
+          <span>Grundkursus København</span>
         </TitleLink>
       </Link>
       <Link href="#" passHref>
@@ -32,7 +32,7 @@ function TopTitle() {
   )
 }
 
-export default TopTitle
+export default PageHeader
 
 const Wrapper  = tw.div`
   mt-2 max-w-2xl mx-auto sm:px-6 lg:max-w-7xl lg:grid lg:grid-cols-2 lg:gap-x-8 lg:px-8 font-inter
@@ -47,7 +47,7 @@ const ReviewLink = tw.a`
 `
 
 const ALeftIcon = tw(ArrowLeftIcon)`
-  text-black h-4 w-4 2xl:-ml-7 mt-0 mr-3
+  sr-only text-black h-4 w-4 2xl:-ml-7 mt-0 mr-3
 `
 
 const BlackText = tw.span`

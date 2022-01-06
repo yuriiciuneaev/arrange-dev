@@ -23,7 +23,7 @@ export default function Login() {
             username:       email,
             password:       password,
             responseType:   'id_token',
-            redirectUri:    process.env.NEXT_PUBLIC_BASE_URL + 'admin/dashboard/'
+            redirectUri:    process.env.NEXT_PUBLIC_BASE_URL + 'admin/activities/'
         }, function (err,res) {
             // handle errors or continue
             setLoginError(err.description)
@@ -36,7 +36,7 @@ export default function Login() {
             webAuth.authorize({
                 connection: connectionType,
                 responseType:   'id_token',
-                redirectUri:    process.env.NEXT_PUBLIC_BASE_URL + 'admin/dashboard/'
+                redirectUri:    process.env.NEXT_PUBLIC_BASE_URL + 'admin/activities/'
             }, function (err,res) {
                 // handle errors or continue
                 setLoginError(err.description)
