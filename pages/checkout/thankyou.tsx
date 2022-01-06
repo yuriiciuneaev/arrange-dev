@@ -9,7 +9,7 @@ export default function Thankyou() {
     <Container>
       <ImageWrapper>
         <TopImage
-          src="/images/bg_thankyou.png"
+          src="/images/bg_thankyou.jpeg"
           layout="fill"
           objectFit='contain'
         />
@@ -36,7 +36,7 @@ const ImageWrapper = tw.div`
 `
 
 const TopImage = tw(Image)`
-  object-top
+  object-top gradient-mask-img-laptop xl:gradient-mask-img-desktop
 `
 
 const LeftBgScreen = tw.div`
