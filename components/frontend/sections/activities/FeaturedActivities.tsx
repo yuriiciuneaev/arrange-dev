@@ -30,7 +30,7 @@ const courses = [
 
 function FeaturedActivities() {
   return (
-    <div className="bg-white font-inter">
+    <div className="font-inter">
       <div className="max-w-2xl mx-auto mt-1 flex rounded-md lg:max-w-7xl lg:px-8 gap-3">
         <div className="relative flex items-stretch flex-grow">
           <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
