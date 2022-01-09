@@ -1,16 +1,10 @@
 import React from 'react'
 import tw from "tailwind-styled-components"
+import { activities } from '../../../../data/admin/activities'
 
 type TrProps = {
   $index: number;
 };
-
-const activities = [
-  { name: 'Lean Green Belt', teacher: 'Allan B. Rix', spots: '17 available spots', startDate: '11-10-2021' },
-  { name: 'Lean Green Belt', teacher: 'Allan B. Rix', spots: '17 available spots', startDate: '11-10-2021' },
-  { name: 'Lean Green Belt', teacher: 'Allan B. Rix', spots: '17 available spots', startDate: '11-10-2021' },
-  { name: 'Lean Green Belt', teacher: 'Allan B. Rix', spots: '17 available spots', startDate: '11-10-2021' },
-]
 
 function ActivitiesTable() {
   return (
