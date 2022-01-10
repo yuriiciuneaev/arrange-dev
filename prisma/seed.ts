@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client'
-import { activities } from '../data/admin/activities'
+import { events } from '../data/backend/events'
 const prisma = new PrismaClient()
 
 async function main() {
@@ -10,7 +10,7 @@ async function main() {
   })
 
   await prisma.activity.createMany({
-    data: activities
+    data: events
   })
 }
 

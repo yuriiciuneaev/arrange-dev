@@ -1,6 +1,6 @@
 import React from 'react'
 import { SearchIcon, AdjustmentsIcon } from '@heroicons/react/solid'
-import { courses } from '../../../../data/frontend/courses'
+import { courses } from '../../../../data/public/courses'
 
 function FeaturedActivities() {
   return (

@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import tw from "tailwind-styled-components"
 
-function ActivityTitle({
+function EventTitle({
   title
 }: {
   title: string;
@@ -28,7 +28,7 @@ function ActivityTitle({
   )
 }
 
-export default ActivityTitle
+export default EventTitle
 
 const Wrapper = tw.div`
   lg:col-span-2 flex border-b border-gray-200 lg:mr-20 pb-6

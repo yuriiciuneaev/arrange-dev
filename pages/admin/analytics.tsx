@@ -1,7 +1,7 @@
 import React from 'react'
 import { ArrowSmDownIcon, ArrowSmUpIcon } from '@heroicons/react/solid'
-import Layout from '../../components/admin/Layout';
-import PageHeader from '../../components/admin/sections/PageHeader';
+import Layout from '../../components/backend/Layout';
+import PageHeader from '../../components/backend/sections/PageHeader';
 
 const stats = [
   { name: 'Total Subscribers', stat: '71,897', previousStat: '70,946', change: '12%', changeType: 'increase' },

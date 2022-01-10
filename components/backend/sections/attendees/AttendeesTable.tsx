@@ -1,12 +1,12 @@
 import React from 'react'
 import tw from "tailwind-styled-components"
-import { customers } from '../../../../data/admin/customers'
+import { attendees } from '../../../../data/backend/attendees'
 
 type TrProps = {
   $index: number;
 };
 
-function CustomersTable() {
+function AttendeesTable() {
   return (
     <Wrapper>
       <Margins>
@@ -22,12 +22,12 @@ function CustomersTable() {
                 </tr>
               </THead>
               <tbody>
-                {customers.map((customer, customerIdx) => (
-                  <TR key={customerIdx} $index={customerIdx}>
-                    <NameTD>{customer.name}</NameTD>
-                    <GrayTD>{customer.email}</GrayTD>
-                    <GrayTD>{customer.orders}</GrayTD>
-                    <GrayTD>{customer.spent}</GrayTD>
+                {attendees.map((attendee, attendeeIdx) => (
+                  <TR key={attendeeIdx} $index={attendeeIdx}>
+                    <NameTD>{attendee.name}</NameTD>
+                    <GrayTD>{attendee.email}</GrayTD>
+                    <GrayTD>{attendee.orders}</GrayTD>
+                    <GrayTD>{attendee.spent}</GrayTD>
                   </TR>
                 ))}
               </tbody>
@@ -39,7 +39,7 @@ function CustomersTable() {
   )
 }
 
-export default CustomersTable
+export default AttendeesTable
 
 const Wrapper = tw.div`
   flex flex-col

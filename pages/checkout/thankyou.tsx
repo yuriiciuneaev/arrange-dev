@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import tw from "tailwind-styled-components"
 
-import BookingSummary from '../../components/frontend/sections/checkout/BookingSummary'
-import RegConfirmationForm from '../../components/frontend/sections/checkout/RegConfirmationForm'
+import BookingSummary from '../../components/public/sections/checkout/BookingSummary'
+import RegConfirmationForm from '../../components/public/sections/checkout/RegConfirmationForm'
 
 export default function Thankyou() {
   return (

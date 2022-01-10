@@ -1,7 +1,7 @@
 import tw from "tailwind-styled-components"
 
-import CustomerDetailsForm from '../../components/frontend/sections/checkout/CustomerDetailsForm'
-import BookingSummary from '../../components/frontend/sections/checkout/BookingSummary'
+import CustomerDetailsForm from '../../components/public/sections/checkout/CustomerDetailsForm'
+import BookingSummary from '../../components/public/sections/checkout/BookingSummary'
 
 export default function Checkout() {
   return (

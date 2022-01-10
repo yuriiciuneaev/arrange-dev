@@ -1,7 +1,7 @@
 import React from 'react'
 import tw from "tailwind-styled-components"
 
-function ActivityDescription({
+function EventDescription({
   description
 }: {
   description: string;
@@ -13,7 +13,7 @@ function ActivityDescription({
   )
 }
 
-export default ActivityDescription
+export default EventDescription
 
 const Wrapper = tw.div`
   py-10  lg:col-start-1 lg:col-span-2 border-b border-gray-200 lg:pr-0 lg:mr-20

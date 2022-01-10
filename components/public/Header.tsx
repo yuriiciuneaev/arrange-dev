@@ -1,6 +1,6 @@
-import { Fragment, useState, useEffect } from 'react'
-import { Dialog, Popover, RadioGroup, Tab, Transition, Listbox, Disclosure  } from '@headlessui/react'
-import { MenuIcon, SearchIcon, ShoppingCartIcon, UserIcon, XIcon } from '@heroicons/react/outline'
+import { Fragment, useState } from 'react'
+import { Dialog, Popover, Transition } from '@headlessui/react'
+import { MenuIcon, SearchIcon, UserIcon, XIcon } from '@heroicons/react/outline'
 export { Header };
 
 const navigation = {

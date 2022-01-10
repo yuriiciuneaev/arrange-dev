@@ -1,5 +1,5 @@
 import React from 'react'
-import Layout from '../../components/admin/Layout';
+import Layout from '../../components/backend/Layout';
 
 const tabs = [
   { name: 'My Account', href: '#', current: false },

@@ -1,5 +1,5 @@
 import ReactDOMServer from "react-dom/server";
-import FeaturedActivities from "../../components/frontend/sections/activities/FeaturedActivities"
+import FeaturedActivities from "../../components/public/sections/events/FeaturedActivities"
 
 import Cors from 'cors'
 import initMiddleware from '../../lib/init-middleware'

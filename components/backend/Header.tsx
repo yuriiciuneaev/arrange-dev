@@ -9,8 +9,8 @@ const user = {
     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
 const navigation = [
-  { name: 'Activities', href: '/admin/activities', current: true, handle: 'activities', },
-  { name: 'Customers', href: '/admin/customers', current: false, handle: 'customers', },
+  { name: 'Events', href: '/admin/events', current: true, handle: 'events', },
+  { name: 'Attendees', href: '/admin/attendees', current: false, handle: 'attendees', },
   { name: 'Analytics', href: '/admin/analytics', current: false, handle: 'analytics', },
   { name: 'Settings', href: '/admin/settings', current: false, handle: 'settings', },
 ]

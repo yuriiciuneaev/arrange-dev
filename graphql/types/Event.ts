@@ -2,8 +2,8 @@
 import { objectType, extendType } from 'nexus'
 // import { Teacher } from './Teacher'
 
-export const Activity = objectType({
-  name: 'Activity',
+export const Event = objectType({
+  name: 'Event',
   definition(t) {
     t.string('id')
     t.string('name')
@@ -21,20 +21,20 @@ export const Activity = objectType({
     //           id: _parent.id,
     //         },
     //       })
-    //       .activities()
+    //       .events()
     //   },
     // })
   },
 })
 
-export const ActivitiesQuery = extendType({
-  type: 'Query',
-  definition(t) {
-    t.nonNull.list.field('activities', {
-      type: 'Activity',
-      resolve(_parent, _args, ctx) {
-        return ctx.prisma.activity.findMany()
-      },
-    })
-  },
-})
+// export const EventsQuery = extendType({
+//   type: 'Query',
+//   definition(t) {
+//     t.nonNull.list.field('events', {
+//       type: 'Event',
+//       resolve(_parent, args, ctx) {
+//         return ctx.prisma.event.findMany()
+//       },
+//     })
+//   },
+// })

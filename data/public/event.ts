@@ -1,4 +1,4 @@
-export const activity = {
+export const event = {
   name: 'The Basic Course in Copenhagen at Smertefri Fødsel™',
   images: [
     {

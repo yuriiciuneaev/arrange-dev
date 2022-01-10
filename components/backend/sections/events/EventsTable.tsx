@@ -1,15 +1,13 @@
 import React from 'react'
 import tw from "tailwind-styled-components"
 import { gql, useQuery } from '@apollo/client'
-// import { activities } from '../../../../data/admin/activities'
+import { events } from '../../../../data/backend/events'
 
 const AllActivitiesQuery = gql`
   query {
     activities {
       id
       name
-      description
-      # startDate
     }
   }
 `
@@ -18,9 +16,9 @@ type TrProps = {
   $index: number;
 };
 
-function ActivitiesTable() {
+function EventsTable() {
 
-  const { data, loading, error } = useQuery(AllActivitiesQuery)
+  // const { data, loading, error } = useQuery(AllActivitiesQuery)
   
 
   return (
@@ -38,19 +36,20 @@ function ActivitiesTable() {
                 </tr>
               </THead>
               <tbody>
-                {data.activities.map((activity, activityIdx) => (
-                  <TR key={activityIdx} $index={activityIdx}>
-                    <NameTD>{activity.name}</NameTD>
+                {/* {data.events.map((activity, activityIdx) => ( */}
+                {events.map((event, eventIdx) => (
+                  <TR key={eventIdx} $index={eventIdx}>
+                    <NameTD>{event.name}</NameTD>
                     <GrayTD>
-                      {/* {activity.teacher.name} */}
+                      {/* {event.teacher.name} */}
                       -
                     </GrayTD>
                     <GrayTD>
-                      {activity.spotCnt}
+                      {event.spotCnt}
                       <span> available spots</span>
                     </GrayTD>
                     <GrayTD>
-                      {activity.startDate}
+                      {event.startDate}
                     </GrayTD>
                   </TR>
                 ))}
@@ -63,7 +62,7 @@ function ActivitiesTable() {
   )
 }
 
-export default ActivitiesTable
+export default EventsTable
 
 const Wrapper = tw.div`
   flex flex-col

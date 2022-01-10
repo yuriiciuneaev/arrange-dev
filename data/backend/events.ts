@@ -1,6 +1,6 @@
-export const activities = [
+export const events = [
   { 
-    name: 'Grundkursus København 01 - ', 
+    name: 'Grundkursus København 01', 
     // teacher: {
     //   name: 'Allan B. Rix', 
     // },

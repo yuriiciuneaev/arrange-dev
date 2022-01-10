@@ -8,7 +8,7 @@ interface Image {
   alt: string;
 }
 
-function ActivityImage({
+function EventImage({
   images
 }: {
   images: Array<Image>;
@@ -46,7 +46,7 @@ function ActivityImage({
   )
 }
 
-export default ActivityImage
+export default EventImage
 
 const Wrapper = tw.div`
   mt-6 max-w-2xl mx-auto sm:px-6 lg:px-8 lg:max-w-7xl
