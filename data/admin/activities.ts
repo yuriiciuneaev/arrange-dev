@@ -1,6 +1,34 @@
 export const activities = [
-  { name: 'Lean Green Belt - ', teacher: 'Allan B. Rix', spots: '17 available spots', startDate: '11-10-2021' },
-  { name: 'Lean Green Belt', teacher: 'Allan B. Rix', spots: '17 available spots', startDate: '11-10-2021' },
-  { name: 'Lean Green Belt', teacher: 'Allan B. Rix', spots: '17 available spots', startDate: '11-10-2021' },
-  { name: 'Lean Green Belt', teacher: 'Allan B. Rix', spots: '17 available spots', startDate: '11-10-2021' },
+  { 
+    name: 'Grundkursus København 01', 
+    // teacher: {
+    //   name: 'Allan B. Rix', 
+    // },
+    spotCnt: 17, 
+    startDate: '11-10-2021' 
+  },
+  { 
+    name: 'Grundkursus København 02', 
+    // teacher: {
+    //   name: 'Allan B. Rix', 
+    // },
+    spotCnt: 17, 
+    startDate: '11-10-2021' 
+  },
+  { 
+    name: 'Grundkursus København 03',
+    // teacher: {
+    //   name: 'Allan B. Rix', 
+    // },
+    spotCnt: 17, 
+    startDate: '11-10-2021'
+  },
+  { 
+    name: 'Grundkursus København 04', 
+    // teacher: {
+    //   name: 'Allan B. Rix', 
+    // },
+    spotCnt: 17, 
+    startDate: '11-10-2021' 
+  },
 ]

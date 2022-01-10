@@ -25,9 +25,16 @@ function ActivitiesTable() {
                 {activities.map((activity, activityIdx) => (
                   <TR key={activityIdx} $index={activityIdx}>
                     <NameTD>{activity.name}</NameTD>
-                    <GrayTD>{activity.teacher}</GrayTD>
-                    <GrayTD>{activity.spots}</GrayTD>
-                    <GrayTD>{activity.startDate}</GrayTD>
+                    <GrayTD>
+                      {/* {activity.teacher.name} */}
+                    </GrayTD>
+                    <GrayTD>
+                      {activity.spotCnt}
+                      <span> available spots</span>
+                    </GrayTD>
+                    <GrayTD>
+                      {activity.startDate}
+                    </GrayTD>
                   </TR>
                 ))}
               </tbody>

@@ -72,7 +72,7 @@ function RegConfirmationForm() {
               <div className="pl-6 mb-4 text-black">
                 <p className="font-semibold text-sm">Order #13272</p>
                 <p className="font-semibold text-2xl">Thank you for your registration Marie!</p>
-            </div>
+              </div>
             </div>
             
             <fieldset>
