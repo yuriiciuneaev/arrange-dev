@@ -1,12 +1,28 @@
 import React from 'react'
 import tw from "tailwind-styled-components"
-import { activities } from '../../../../data/admin/activities'
+import { gql, useQuery } from '@apollo/client'
+// import { activities } from '../../../../data/admin/activities'
+
+const AllActivitiesQuery = gql`
+  query {
+    activities {
+      id
+      name
+      description
+      # startDate
+    }
+  }
+`
 
 type TrProps = {
   $index: number;
 };
 
 function ActivitiesTable() {
+
+  const { data, loading, error } = useQuery(AllActivitiesQuery)
+  
+
   return (
     <Wrapper>
       <Margins>
@@ -22,11 +38,12 @@ function ActivitiesTable() {
                 </tr>
               </THead>
               <tbody>
-                {activities.map((activity, activityIdx) => (
+                {data.activities.map((activity, activityIdx) => (
                   <TR key={activityIdx} $index={activityIdx}>
                     <NameTD>{activity.name}</NameTD>
                     <GrayTD>
                       {/* {activity.teacher.name} */}
+                      -
                     </GrayTD>
                     <GrayTD>
                       {activity.spotCnt}

@@ -1,6 +1,6 @@
 export const activities = [
   { 
-    name: 'Grundkursus København 01', 
+    name: 'Grundkursus København 01 - ', 
     // teacher: {
     //   name: 'Allan B. Rix', 
     // },
