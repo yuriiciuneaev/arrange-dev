@@ -1,13 +1,15 @@
 import React from 'react'
 import tw from "tailwind-styled-components"
 import { gql, useQuery } from '@apollo/client'
-import { events } from '../../../../data/backend/events'
+// import { events } from '../../../../data/backend/events'
 
-const AllActivitiesQuery = gql`
+const AllEventsQuery = gql`
   query {
-    activities {
+    events {
       id
       name
+      spotCnt
+      startDate
     }
   }
 `
@@ -18,9 +20,8 @@ type TrProps = {
 
 function EventsTable() {
 
-  // const { data, loading, error } = useQuery(AllActivitiesQuery)
-  
-
+  const { data, loading, error } = useQuery(AllEventsQuery)
+  if (error) return <p>Oops! SOmething went wrong {error}</p>;
   return (
     <Wrapper>
       <Margins>
@@ -36,8 +37,10 @@ function EventsTable() {
                 </tr>
               </THead>
               <tbody>
-                {/* {data.events.map((activity, activityIdx) => ( */}
-                {events.map((event, eventIdx) => (
+              {loading ? (
+                <LoadingText>Loading...</LoadingText>
+              ) : (
+                data.events.map((event, eventIdx) => (
                   <TR key={eventIdx} $index={eventIdx}>
                     <NameTD>{event.name}</NameTD>
                     <GrayTD>
@@ -52,7 +55,8 @@ function EventsTable() {
                       {event.startDate}
                     </GrayTD>
                   </TR>
-                ))}
+                ))
+              )}
               </tbody>
             </Table>
           </Borders>
@@ -90,6 +94,10 @@ const THead = tw.thead`
 
 const TH = tw.th`
   px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider
+`
+
+const LoadingText = tw.p`
+  px-6 py-3 text-left text-xs text-gray-500
 `
 
 const TR = tw.tr<TrProps>`

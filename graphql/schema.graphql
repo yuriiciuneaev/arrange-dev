@@ -2,16 +2,25 @@
 ### Do not make changes to this file directly
 
 
-type Activity {
+type Event {
   description: String
   endDate: String
-  id: String
+  id: Int
   name: String
   price: Float
+  published: Boolean
   spotCnt: Int
   startDate: String
+  teacherId: Int
 }
 
 type Query {
-  activities: [Activity]!
+  event(id: Int): Event!
+  events: [Event]
+}
+
+type Teacher {
+  events: [Event!]!
+  id: Int
+  name: String
 }

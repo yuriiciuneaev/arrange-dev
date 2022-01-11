@@ -9,7 +9,7 @@ async function main() {
     }
   })
 
-  await prisma.activity.createMany({
+  await prisma.event.createMany({
     data: events
   })
 }

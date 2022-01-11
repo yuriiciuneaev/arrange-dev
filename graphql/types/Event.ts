@@ -1,40 +1,49 @@
 // /graphql/types/Link.ts
-import { objectType, extendType } from 'nexus'
-// import { Teacher } from './Teacher'
+import { objectType, extendType, intArg } from 'nexus'
+import { Teacher } from './Teacher'
 
 export const Event = objectType({
   name: 'Event',
   definition(t) {
-    t.string('id')
+    t.int('id')
     t.string('name')
     t.string('description')
     t.float('price')
     t.int('spotCnt')
     t.string('startDate')
     t.string('endDate')
-    // t.field('teacher', {
-    //   type: Teacher,
-    //   async resolve(_parent, _args, ctx) {
-    //     return await ctx.prisma.activiry
-    //       .findUnique({
-    //         where: {
-    //           id: _parent.id,
-    //         },
-    //       })
-    //       .events()
-    //   },
-    // })
+    t.int('teacherId')
+    t.boolean('published')
   },
 })
 
-// export const EventsQuery = extendType({
-//   type: 'Query',
-//   definition(t) {
-//     t.nonNull.list.field('events', {
-//       type: 'Event',
-//       resolve(_parent, args, ctx) {
-//         return ctx.prisma.event.findMany()
-//       },
-//     })
-//   },
-// })
+// get Unique Link
+export const LinkByIDQuery = extendType({
+  type: 'Query',
+  definition(t: any) {
+    t.nonNull.field('event', {
+      type: 'Event',
+      args: { id: intArg() },
+      resolve(_parent, args, ctx) {
+        const event = ctx.prisma.event.findUnique({
+          where: {
+            id: args.id,
+          },
+        });
+        return event;
+      },
+    });
+  },
+});
+
+export const EventsQuery = extendType({
+  type: 'Query',
+  definition(t: any) {
+    t.list.field('events', {
+      type: 'Event',
+      resolve(_parent, _args, ctx) {
+        return ctx.prisma.event.findMany()
+      }
+    })
+  }
+});
