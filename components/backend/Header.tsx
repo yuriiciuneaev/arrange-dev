@@ -42,7 +42,7 @@ function Header({handle}) {
     });
 
     setNav(updatedNavigation);
-  });
+  }, []);
   return (
     <>
       <Disclosure as="nav" className="bg-white border-b border-gray-200">

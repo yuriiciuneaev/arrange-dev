@@ -3,6 +3,7 @@
 
 
 type Event {
+  createdAt: dateTime
   description: String
   endDate: String
   id: Int
@@ -11,12 +12,25 @@ type Event {
   published: Boolean
   spotCnt: Int
   startDate: String
+  teacher: Teacher
   teacherId: Int
+  updatedAt: dateTime
+}
+
+type EventsWithPageInfo {
+  edges: [Event]
+  node: PageInfo
+}
+
+type PageInfo {
+  limit: Int
+  offset: Int
+  totalCount: Int
 }
 
 type Query {
   event(id: Int): Event!
-  events: [Event]
+  events(limit: Int, offset: Int): EventsWithPageInfo
 }
 
 type Teacher {
@@ -24,3 +38,6 @@ type Teacher {
   id: Int
   name: String
 }
+
+"""Date custom scalar type"""
+scalar dateTime

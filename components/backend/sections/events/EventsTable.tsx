@@ -1,15 +1,26 @@
-import React from 'react'
+import React, { forwardRef, useImperativeHandle } from 'react'
 import tw from "tailwind-styled-components"
 import { gql, useQuery } from '@apollo/client'
-// import { events } from '../../../../data/backend/events'
 
 const AllEventsQuery = gql`
-  query {
-    events {
-      id
-      name
-      spotCnt
-      startDate
+  query allEventsQuery($offset: Int, $limit: Int){
+    events(offset: $offset, limit: $limit) {
+      node {
+        totalCount
+        offset
+        limit
+      }
+      edges {
+        id
+        name
+        spotCnt
+        startDate
+        teacher {
+          name
+        }
+        createdAt
+        updatedAt
+      }
     }
   }
 `
@@ -18,10 +29,32 @@ type TrProps = {
   $index: number;
 };
 
-function EventsTable() {
+interface PageInfo {
+  getTotalCount: (newTotalCount) => void;
+  offset: number;
+  limit: number;
+}
 
-  const { data, loading, error } = useQuery(AllEventsQuery)
-  if (error) return <p>Oops! SOmething went wrong {error}</p>;
+function EventsTable(props: PageInfo, ref) {
+  useImperativeHandle(ref, () => ({
+    setFromOutside (msg) {
+      // alert("ok!!")
+    }
+  }), [])
+
+  const { data, loading, error, fetchMore } = useQuery(AllEventsQuery, {
+    variables: {
+      offset: props.offset,
+      limit: props.limit
+    },
+  })
+  
+  if (!loading) {
+    props.getTotalCount(data.events.node.totalCount)
+  }
+
+  if (error) return <p>Oops! Something went wrong {error}</p>;
+
   return (
     <Wrapper>
       <Margins>
@@ -40,12 +73,11 @@ function EventsTable() {
               {loading ? (
                 <LoadingText>Loading...</LoadingText>
               ) : (
-                data.events.map((event, eventIdx) => (
+                data.events.edges.map((event, eventIdx) => (
                   <TR key={eventIdx} $index={eventIdx}>
                     <NameTD>{event.name}</NameTD>
                     <GrayTD>
-                      {/* {event.teacher.name} */}
-                      -
+                      {event.teacher && event.teacher.name}
                     </GrayTD>
                     <GrayTD>
                       {event.spotCnt}
@@ -66,7 +98,7 @@ function EventsTable() {
   )
 }
 
-export default EventsTable
+export default forwardRef(EventsTable)
 
 const Wrapper = tw.div`
   flex flex-col

@@ -13,12 +13,25 @@ export const Event = objectType({
     t.string('startDate')
     t.string('endDate')
     t.int('teacherId')
+    t.nullable.field('teacher', {
+      type: 'Teacher',
+      resolve(parent, _args, ctx) {
+        const teacher = ctx.prisma.event
+          .findUnique({
+            where: { id: parent.id,}          
+          })
+          .teacher()
+        return teacher;
+      },
+    })
     t.boolean('published')
+    t.field('createdAt', {type: "dateTime"})
+    t.field('updatedAt', {type: "dateTime"})
   },
 })
 
-// get Unique Link
-export const LinkByIDQuery = extendType({
+// get Unique event
+export const EventByIDQuery = extendType({
   type: 'Query',
   definition(t: any) {
     t.nonNull.field('event', {
@@ -36,13 +49,62 @@ export const LinkByIDQuery = extendType({
   },
 });
 
+export const PageInfo = objectType({
+  name: 'PageInfo',
+  definition(t) {
+    t.int('totalCount')
+    t.int('offset')
+    t.int('limit')
+  },
+})
+
+export const EventsWithPageInfo = objectType({
+  name: 'EventsWithPageInfo',
+  definition(t) {
+    t.field('node', {type: PageInfo})
+    t.list.field('edges', {
+      type: Event
+    })
+  },
+})
+
 export const EventsQuery = extendType({
   type: 'Query',
   definition(t: any) {
-    t.list.field('events', {
-      type: 'Event',
-      resolve(_parent, _args, ctx) {
-        return ctx.prisma.event.findMany()
+    t.field('events', {
+      type: 'EventsWithPageInfo',
+      args: {
+        offset: intArg(),
+        limit: intArg()
+      },
+      async resolve(_parent, args, ctx) {
+        
+        const [totalCount, subEvents] = await Promise.all([
+          ctx.prisma.event.count(),
+          ctx.prisma.event.findMany({
+            skip: args.offset,
+            take: args.limit,
+            where: {
+              name: {
+                // contains: 'Grund',
+              },
+            },
+            orderBy: {
+              id: 'asc',
+              // id: 'desc',
+              // createdAt: 'desc', 
+            },
+          })
+        ]);
+        
+        return {
+          node: {
+            totalCount: totalCount,
+            offset: args.offset,
+            limit: args.limit
+          },
+          edges: subEvents
+        };
       }
     })
   }
